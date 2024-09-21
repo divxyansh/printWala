@@ -1,8 +1,10 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { Check, Star } from 'lucide-react';
+import { ArrowRight, Check, Star } from 'lucide-react';
 import Phone from "@/components/Phone";
 import { Icons } from "@/components/icons";
 import { Reviews } from "@/components/Reviews";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -12,7 +14,7 @@ export default function Home() {
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
               <div className="absolute w-52 -top-20 hidden lg:block">
-                <img src="/logo.png" className="w-full" alt="snake illustration" />
+                <img src="/logo.png" className="w-full" alt="logo" />
               </div>
               <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl">
                 Your Image on a <span className="bg-green-600 px-2 text-white">Custom</span> Phone Case
@@ -52,7 +54,7 @@ export default function Home() {
                     <Star className="h-4 w-4 text-green-600 fill-green-600" />
                     <Star className="h-4 w-4 text-green-600 fill-green-600" />
                   </div>
-                  <p><span className="font-semibold">1.250</span> happy customers</p>
+                  <p><span className="font-semibold">1,250</span> happy customers</p>
                 </div>
               </div>
             </div>
@@ -142,7 +144,41 @@ export default function Home() {
             </div>
           </div>
 
-          <div className=""></div>
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="relative flex flex-col items-center md:grid grid-cols-2 gap-40">
+              <img src="/arrow.png" className="absolute top-[25rem] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 rotate-90 md:rotate-0" />
+
+              <div className="relative h-80 md:h-full w-full md:justify-self-end max-w-sm rounded-xl bg-gray-900/5 ring-inset ring-gray-900/10 lg:rounded-2xl">
+              <img src="/horse.jpg" className="rounded-md object-cover bg-white shadow-2xl ring-1 ring-gray-900/10 h-full w-full" />
+              </div>
+              <Phone className="w-60" imgSrc="/horse_phone.jpg"/>
+            </div>
+          </div>
+          <ul className="mx-auto mt-12 max-w-prose sm:text-lg space-y-2 w-fit">
+            <li className="w-fit">
+              <Check className="h-5 w-5 shrink-0 text-green-600 inline mr-1.5"/>
+              High quality silicone material
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 shrink-0 text-green-600 inline mr-1.5"/>
+              Scratch and fingerprint resistant coating 
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 shrink-0 text-green-600 inline mr-1.5"/>
+              Wireless charging compatible
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 shrink-0 text-green-600 inline mr-1.5"/>
+              5 year print warranty
+            </li>
+
+            <div className="flex justify-center">
+              <Link href='/configure/upload' className={buttonVariants({
+                size: 'lg',
+                className: 'mx-auto mt-8'
+              })}>Create your own case <ArrowRight className="h-4 w-4 ml-1.5"/></Link>
+            </div>
+          </ul>
         </MaxWidthWrapper>
       </section>
     </div>
