@@ -21,10 +21,10 @@ const LoginModal = ({
     <Dialog onOpenChange={setIsOpen} open={isOpen}>
       <DialogContent className='absolute z-[9999999]'>
         <DialogHeader>
-          <div className='relative mx-auto w-32 h-32 mb-2'>
+          <div className='relative mx-auto w-24 h-24 mb-2'>
             <Image
-              src='/icon-1.png'
-              alt='icon image'
+              src='/snake-1.png'
+              alt='snake image'
               className='object-contain'
               fill
             />
