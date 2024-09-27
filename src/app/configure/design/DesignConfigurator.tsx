@@ -1,4 +1,3 @@
-
 'use client'
 
 import HandleComponent from '@/components/HandleComponent'
@@ -45,7 +44,7 @@ const DesignConfigurator = ({
     const { toast } = useToast()
     const router = useRouter()
 
-    const { mutate: saveConfig, isPending } = useMutation({
+    const { mutate: saveConfig } = useMutation({
         mutationKey: ['save-config'],
         mutationFn: async (args: SaveConfigArgs) => {
             await Promise.all([saveConfiguration(), _saveConfig(args)])
@@ -352,7 +351,7 @@ const DesignConfigurator = ({
                                                             as='span'
                                                             className='mt-2 flex text-sm sm:ml-4 sm:mt-0 sm:flex-col sm:text-right'>
                                                             <span className='font-medium text-gray-900'>
-                                                                {formatPrice(option.price)}
+                                                            {formatPrice(option.price)}
                                                             </span>
                                                         </RadioGroup.Description>
                                                     </RadioGroup.Option>

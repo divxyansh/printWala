@@ -8,6 +8,11 @@ import Providers from '@/components/Providers'
 
 const recursive = Recursive({ subsets: ['latin'] })
 
+export const metadata: Metadata={
+  title:'printWala',
+  description:'Customize your phone case with our easy to use tool',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
