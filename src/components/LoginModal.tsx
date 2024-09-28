@@ -10,13 +10,16 @@ import Image from 'next/image'
 import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
 import { buttonVariants } from './ui/button'
 
-const LoginModal = ({
-  isOpen,
-  setIsOpen,
-}: {
+interface LoginModalProps {
   isOpen: boolean
   setIsOpen: Dispatch<SetStateAction<boolean>>
-}) => {
+  isLoggedIn: boolean // New prop to check if the user is logged in
+}
+
+const LoginModal = ({ isOpen, setIsOpen, isLoggedIn }: LoginModalProps) => {
+  // If the user is logged in, don't render the modal
+  if (isLoggedIn) return null
+
   return (
     <Dialog onOpenChange={setIsOpen} open={isOpen}>
       <DialogContent className='absolute z-[9999999]'>
