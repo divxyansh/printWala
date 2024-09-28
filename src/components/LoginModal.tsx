@@ -13,11 +13,10 @@ import { buttonVariants } from './ui/button'
 interface LoginModalProps {
   isOpen: boolean
   setIsOpen: Dispatch<SetStateAction<boolean>>
-  isLoggedIn: boolean // New prop to check if the user is logged in
+  isLoggedIn?: boolean // Make it optional
 }
 
-const LoginModal = ({ isOpen, setIsOpen, isLoggedIn }: LoginModalProps) => {
-  // If the user is logged in, don't render the modal
+const LoginModal = ({ isOpen, setIsOpen, isLoggedIn = false }: LoginModalProps) => {
   if (isLoggedIn) return null
 
   return (
